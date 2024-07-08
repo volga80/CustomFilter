@@ -2,6 +2,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+      public static  <T> Map<T, Integer> elementCounter(Collection<T> collection){
+        Map<T, Integer> result = new HashMap<>();
+        if (collection == null){
+            throw new IllegalArgumentException("Коллекция пуста");
+        }
+
+        for(T element : collection){
+            result.put(element, result.getOrDefault(element, 0) + 1);
+        }
+        return result;
+    }
     public static void main(String[] args) {
         Object[] input = {1, 2, 3, 4, 5};
 
