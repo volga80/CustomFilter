@@ -11,18 +11,18 @@ public class Main {
 
         Filter newFilter = new Filter() {
             @Override
-            public Object apply(Object o) {
-                if (o instanceof Integer) {
-                    return (Integer) o * (Integer) o;
+            public Object apply(Object element) {
+                if (element instanceof Integer) {
+                    return (Integer) element * (Integer) element;
                 }
-                return o;
+                return element;
             }
         };
 
         Object[] output = CustomArrayUtils.filter(input, newFilter);
 
-        for (Object o : output) {
-            System.out.println(o);
+        for (Object element : output) {
+            System.out.println(element);
         }
     }
 
